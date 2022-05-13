@@ -1,0 +1,43 @@
+
+body{background-image: url(bgp.jpg);
+    margin: 0;
+    user-select: none;
+nav{background-color: rgba(0, 0, 0, 0.541);
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7%;
+.logo{margin-left: 50px;}
+.links{width: 40%;
+       display: flex;
+       justify-content: space-around;
+       align-items: center;
+       font-size: 20px;
+       color: white;    
+       #work{color: #37EFAD;}       
+}
+}
+
+header{color: white;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+width: 60%;
+margin-left: 50px;
+.headertext{font-size: 60px;}
+.headerwriteup{font-size: 25px;margin-bottom: 50px;}
+.workbtn{width: 220px;
+    font-size: 20px;
+height: 70px;
+border-radius: 5px;
+background-color: #37EFAD;
+color: black;
+display: flex;
+justify-content: center;
+align-items: center;}
+}
+
+
+
+
+}
