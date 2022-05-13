@@ -1,5 +1,6 @@
 body {
   background-image: url(bgp.jpg);
+  overflow: hidden;
   margin: 0;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -39,6 +40,67 @@ body nav .links {
 
 body nav .links #work {
   color: #37EFAD;
+}
+
+body nav .links .li::before, body nav .links #work::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #37EFAD;
+  bottom: 0;
+  left: 0;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
+
+body nav .links .li:hover::before, body nav .links #work:hover::before {
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+body nav .links .li:hover, body nav .links #work:hover {
+  -webkit-box-shadow: inset 100px 0 0 0 #37EFAD;
+          box-shadow: inset 100px 0 0 0 #37EFAD;
+  -webkit-transition: color .3s ease-in-out, -webkit-box-shadow .6s ease-in-out;
+  transition: color .3s ease-in-out, -webkit-box-shadow .6s ease-in-out;
+  transition: color .3s ease-in-out, box-shadow .6s ease-in-out;
+  transition: color .3s ease-in-out, box-shadow .6s ease-in-out, -webkit-box-shadow .6s ease-in-out;
+  color: black;
+}
+
+body .contactMenu {
+  width: 320px;
+  height: 290px;
+  background-color: #37EFAD;
+  position: absolute;
+  left: 100%;
+  float: right;
+}
+
+body .contactMenu .cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 250px;
 }
 
 body header {
@@ -82,5 +144,48 @@ body header .workbtn {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: all 0.8s ease-in;
+  transition: all 0.8s ease-in;
+}
+
+body header :hover {
+  background-color: black;
+  color: #37EFAD;
+}
+
+@-webkit-keyframes slidein {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 77%;
+  }
+}
+
+@keyframes slidein {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 77%;
+  }
+}
+
+@-webkit-keyframes slideout {
+  from {
+    left: 77%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes slideout {
+  from {
+    left: 77%;
+  }
+  to {
+    left: 100%;
+  }
 }
 /*# sourceMappingURL=index.css.map */
