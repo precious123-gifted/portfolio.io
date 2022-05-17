@@ -1,169 +1,167 @@
-body {
-  background-image: url(bgp.jpg);
+* {
   overflow: hidden;
-  margin: 0;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
 }
 
-body nav {
-  background-color: rgba(0, 0, 0, 0.541);
-  margin: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-bottom: 7%;
-}
-
-body nav .logo {
-  margin-left: 50px;
-}
-
-body nav .links {
-  width: 40%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 20px;
-  color: white;
-}
-
-body nav .links #work {
-  color: #37EFAD;
-}
-
-body nav .links .li::before, body nav .links #work::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 4px;
-  border-radius: 4px;
-  background-color: #37EFAD;
-  bottom: 0;
-  left: 0;
-  -webkit-transform-origin: right;
-          transform-origin: right;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-transition: -webkit-transform .3s ease-in-out;
-  transition: -webkit-transform .3s ease-in-out;
-  transition: transform .3s ease-in-out;
-  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
-}
-
-body nav .links .li:hover::before, body nav .links #work:hover::before {
-  -webkit-transform-origin: left;
-          transform-origin: left;
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-}
-
-body nav .links .li:hover, body nav .links #work:hover {
-  -webkit-box-shadow: inset 100px 0 0 0 #37EFAD;
-          box-shadow: inset 100px 0 0 0 #37EFAD;
-  -webkit-transition: color .3s ease-in-out, -webkit-box-shadow .6s ease-in-out;
-  transition: color .3s ease-in-out, -webkit-box-shadow .6s ease-in-out;
-  transition: color .3s ease-in-out, box-shadow .6s ease-in-out;
-  transition: color .3s ease-in-out, box-shadow .6s ease-in-out, -webkit-box-shadow .6s ease-in-out;
-  color: black;
-}
-
-body .contactMenu {
-  width: 320px;
-  height: 290px;
-  background-color: #37EFAD;
-  position: absolute;
-  left: 100%;
-  float: right;
-}
-
-body .contactMenu .cont {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 250px;
-}
-
-body .contactMenu .socials {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  width: 50%;
-}
-
-body header {
-  color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 60%;
-  margin-left: 50px;
-}
-
-body header .headertext {
-  font-size: 60px;
-}
-
-body header .headerwriteup {
-  font-size: 25px;
-  margin-bottom: 50px;
-}
-
-body header .workbtn {
-  width: 220px;
-  font-size: 20px;
-  height: 70px;
-  border-radius: 5px;
-  background-color: #37EFAD;
-  color: black;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transition: all 0.7s ease-in;
-  transition: all 0.7s ease-in;
-}
-
-body header :hover {
-  background-color: black;
-  color: #37EFAD;
+@media only screen and (min-width: 1050px) and (orientation: landscape) {
+  body {
+    background-image: url(bgp.jpg);
+    overflow: hidden;
+    margin: 0;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    width: 100%;
+    height: 100vh;
+  }
+  body nav {
+    background-color: rgba(0, 0, 0, 0.541);
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-bottom: 7%;
+    width: 100%;
+  }
+  body nav .logo {
+    margin-left: 50px;
+  }
+  body nav .menu {
+    visibility: hidden;
+    position: absolute;
+  }
+  body nav .links {
+    width: 40%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 20px;
+    color: white;
+  }
+  body nav .links #work {
+    color: #37EFAD;
+  }
+  body nav .links .li::before, body nav .links #work::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #37EFAD;
+    bottom: 0;
+    left: 0;
+    -webkit-transform-origin: right;
+            transform-origin: right;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transition: -webkit-transform .3s ease-in-out;
+    transition: -webkit-transform .3s ease-in-out;
+    transition: transform .3s ease-in-out;
+    transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+  }
+  body nav .links .li:hover::before, body nav .links #work:hover::before {
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+  body nav .links .li:hover, body nav .links #work:hover {
+    -webkit-box-shadow: inset 100px 0 0 0 #37EFAD;
+            box-shadow: inset 100px 0 0 0 #37EFAD;
+    -webkit-transition: color .3s ease-in-out, -webkit-box-shadow .6s ease-in-out;
+    transition: color .3s ease-in-out, -webkit-box-shadow .6s ease-in-out;
+    transition: color .3s ease-in-out, box-shadow .6s ease-in-out;
+    transition: color .3s ease-in-out, box-shadow .6s ease-in-out, -webkit-box-shadow .6s ease-in-out;
+    color: black;
+  }
+  body .contactMenu {
+    width: 320px;
+    height: 290px;
+    background-color: #37EFAD;
+    position: absolute;
+    left: 100%;
+    float: right;
+  }
+  body .contactMenu .cont {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 250px;
+  }
+  body .contactMenu .socials {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    width: 50%;
+  }
+  body header {
+    color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 60%;
+    margin-left: 50px;
+  }
+  body header .headertext {
+    font-size: 60px;
+  }
+  body header .headerwriteup {
+    font-size: 25px;
+    margin-bottom: 50px;
+  }
+  body header .workbtn {
+    width: 220px;
+    font-size: 20px;
+    height: 70px;
+    border-radius: 5px;
+    background-color: #37EFAD;
+    color: black;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transition: all 0.7s ease-in;
+    transition: all 0.7s ease-in;
+  }
+  body header :hover {
+    background-color: black;
+    color: #37EFAD;
+  }
 }
 
 @-webkit-keyframes slidein {
@@ -199,6 +197,169 @@ body header :hover {
   }
   to {
     left: 100%;
+  }
+}
+
+@media only screen and (max-width: 1050px) and (orientation: portrait) {
+  body {
+    background-image: url(bgp.jpg);
+    overflow: hidden;
+    margin: 0;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    width: 100%;
+    height: 100vh;
+  }
+  body nav {
+    background-color: rgba(0, 0, 0, 0.541);
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 7%;
+    width: 100%;
+  }
+  body nav .logo {
+    margin-left: 50px;
+  }
+  body nav .links {
+    width: 40%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 20px;
+    visibility: hidden;
+    position: absolute;
+    color: white;
+  }
+  body nav .links #work {
+    color: #37EFAD;
+  }
+  body nav .links .li::before, body nav .links #work::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #37EFAD;
+    bottom: 0;
+    left: 0;
+    -webkit-transform-origin: right;
+            transform-origin: right;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transition: -webkit-transform .3s ease-in-out;
+    transition: -webkit-transform .3s ease-in-out;
+    transition: transform .3s ease-in-out;
+    transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+  }
+  body nav .links .li:hover::before, body nav .links #work:hover::before {
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+  body nav .links .li:hover, body nav .links #work:hover {
+    -webkit-box-shadow: inset 100px 0 0 0 #37EFAD;
+            box-shadow: inset 100px 0 0 0 #37EFAD;
+    -webkit-transition: color .3s ease-in-out, -webkit-box-shadow .6s ease-in-out;
+    transition: color .3s ease-in-out, -webkit-box-shadow .6s ease-in-out;
+    transition: color .3s ease-in-out, box-shadow .6s ease-in-out;
+    transition: color .3s ease-in-out, box-shadow .6s ease-in-out, -webkit-box-shadow .6s ease-in-out;
+    color: black;
+  }
+  body .contactMenu {
+    width: 320px;
+    height: 290px;
+    background-color: #37EFAD;
+    position: absolute;
+    left: 100%;
+    float: right;
+  }
+  body .contactMenu .cont {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 250px;
+  }
+  body .contactMenu .socials {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    width: 50%;
+  }
+  body header {
+    color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 60%;
+    margin-left: 50px;
+  }
+  body header .headertext {
+    font-size: 60px;
+  }
+  body header .headerwriteup {
+    font-size: 25px;
+    margin-bottom: 50px;
+  }
+  body header .workbtn {
+    width: 220px;
+    font-size: 20px;
+    height: 70px;
+    border-radius: 5px;
+    background-color: #37EFAD;
+    color: black;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transition: all 0.7s ease-in;
+    transition: all 0.7s ease-in;
+  }
+  body header :hover {
+    background-color: black;
+    color: #37EFAD;
   }
 }
 /*# sourceMappingURL=index.css.map */
