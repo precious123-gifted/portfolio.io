@@ -9,22 +9,17 @@ const slideMenuIn = ()=>{
     // @ts-ignore
     menu.style.animation = 'slidein 1.01s ease'
     // @ts-ignore
-    setTimeout(()=>{ menu.style.left = '77%'},1000)
+    setTimeout(()=>{ menu.style.marginRight = '0px'},1000)
 }
 
-const slideMenuInM = ()=>{
-    // @ts-ignore
-    menu.style.animation = 'slidein 1.01s ease'
-    // @ts-ignore
-    setTimeout(()=>{ menu.style.right = '50%'},1000)
-}
+
 
 
 const slideMenuOut = ()=>{
     // @ts-ignore
     menu.style.animation = 'slideout 1.01s ease'
     // @ts-ignore
-    setTimeout(()=>{ menu.style.left = '100%'},1000)
+    setTimeout(()=>{ menu.style.marginRight = '-320px'},1000)
 }
 
 // Check if the media query is true
@@ -40,7 +35,7 @@ if (landscapeMediaQuery.matches) {
 
 if (portraitMediaQuery.matches) {
   menuIcon.addEventListener('click',()=>{
-      slideMenuInM()
+      slideMenuIn()
    })
 
    exitIcon.addEventListener('click',()=>{

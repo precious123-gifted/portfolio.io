@@ -53,20 +53,23 @@ transition: color .3s ease-in-out, box-shadow .6s ease-in-out;
 }
 }
 
+.conDiv{
+position: absolute;
+width: 100%;
+display: flex;
+justify-content: flex-end;
 .contactMenu{
-    
+ margin-right: -320px;   
 width: 320px;
 height: 290px;
 background-color: #37EFAD;
-position: absolute;
-left: 100%;
-float: right;
 .cont{display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 height: 250px;}
 .socials{display: flex;align-items: center;justify-content: space-evenly;width: 50%;}
+}
 }
 
 header{color: white;
@@ -98,12 +101,12 @@ transition: all 0.7s ease-in;}
 
 }
 @keyframes slidein {
-    from{left: 100%;}
-    to {left: 77%;}
+    from{margin-right: -320px;}
+    to {margin-right: 0px;}
 }
 @keyframes slideout {
-    from{left: 77%;}
-    to {left: 100%;}
+    from{margin-right: 0px;}
+    to {margin-right: -320px;}
 }
 
 
@@ -167,14 +170,18 @@ transition: color .3s ease-in-out, box-shadow .6s ease-in-out;
  }      
 }
 }
-
+.conDiv{
+position: fixed;
+width: 100%;
+display: flex;
+justify-content: flex-end;
+pointer-events: none;
 .contactMenu{
-    
+ margin-right: -320px;    
 width: 320px;
 height: 290px;
 background-color: #37EFAD;
-position: fixed;
-float: right;
+pointer-events: auto;
 .cont{display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -182,6 +189,8 @@ float: right;
 height: 250px;}
 .socials{display: flex;align-items: center;justify-content: space-evenly;width: 50%;}
 }
+}
+
 
 header{color: white;
 display: flex;
