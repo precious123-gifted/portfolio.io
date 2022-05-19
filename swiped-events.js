@@ -1,56 +1,33 @@
-const landscapeMediaQuery = window.matchMedia('(orientation:landscape)')
-const portraitMediaQuery = window.matchMedia('(orientation:portrait)')
-const Contact = document.querySelector('#contact')
-const menu = document.querySelector('.contactMenu')
-const exitIcon = document.querySelector('.ex')
-const menuIcon = document.querySelector('.menu')
+/*!
+ * swiped-events.js - v@version@
+ * Pure JavaScript swipe events
+ * https://github.com/john-doherty/swiped-events
+ * @inspiration https://stackoverflow.com/questions/16348031/disable-scrolling-when-touch-moving-certain-element
+ * @author John Doherty <www.johndoherty.info>
+ * @license MIT
+ */
+(function (window, document) {
 
-const slideMenuIn = ()=>{
-    // @ts-ignore
-    menu.style.animation = 'slidein 1.01s ease'
-    // @ts-ignore
-    setTimeout(()=>{ menu.style.marginRight = '0px'},1000)
-}
+    'use strict';
 
+    // patch CustomEvent to allow constructor creation (IE/Chrome)
+    if (typeof window.CustomEvent !== 'function') {
 
+        window.CustomEvent = function (event, params) {
 
+            params = params || { bubbles: false, cancelable: false, detail: undefined };
 
-const slideMenuOut = ()=>{
-    // @ts-ignore
-    menu.style.animation = 'slideout 1.01s ease'
-    // @ts-ignore
-    setTimeout(()=>{ menu.style.marginRight = '-320px'},1000)
-}
+            var evt = document.createEvent('CustomEvent');
+            evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
+            return evt;
+        };
 
-// Check if the media query is true
-if (landscapeMediaQuery.matches) {
-  Contact.addEventListener('click',()=>{
-      slideMenuIn()
-   })
+        window.CustomEvent.prototype = window.Event.prototype;
+    }
 
-   exitIcon.addEventListener('click',()=>{
-       slideMenuOut()
-   })
-}
-
-if (portraitMediaQuery.matches) {
-  menuIcon.addEventListener('click',()=>{
-      slideMenuIn()
-   })
-
-   exitIcon.addEventListener('click',()=>{
-       slideMenuOut()
-   })
-}
-
-
-
-
-//assigning touchevent
-//gettting the current position of touch
-    menu.addEventListener('touchstart', handleTouchStart, false);
-    menu.addEventListener('touchmove', handleTouchMove, false);
-    menu.addEventListener('touchend', handleTouchEnd, false);
+    document.addEventListener('touchstart', handleTouchStart, false);
+    document.addEventListener('touchmove', handleTouchMove, false);
+    document.addEventListener('touchend', handleTouchEnd, false);
 
     var xDown = null;
     var yDown = null;
@@ -59,8 +36,12 @@ if (portraitMediaQuery.matches) {
     var timeDown = null;
     var startEl = null;
 
-
-function handleTouchEnd(e) {
+    /**
+     * Fires swiped event if swipe detected on touchend
+     * @param {object} e - browser event object
+     * @returns {void}
+     */
+    function handleTouchEnd(e) {
 
         // if the user released on a different target, cancel!
         if (startEl !== e.target) return;
@@ -78,7 +59,6 @@ function handleTouchEnd(e) {
                 }
                 else {
                     eventType = 'swiped-right';
-                    slideMenuOut()
                 }
             }
         }
@@ -174,4 +154,4 @@ function handleTouchEnd(e) {
         return defaultValue;
     }
 
-
+}(window, document));
