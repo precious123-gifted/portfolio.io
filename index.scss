@@ -135,7 +135,10 @@ nav{background-color: rgba(0, 0, 0, 0.541);
     align-items: center;
     margin-bottom: 7%;
     width: 100%;
-.logo{margin-left: 8%;}
+.logo{margin-left: 8%;
+img{   width: 100%;
+    height: auto;
+    object-fit: cover;}}
 .links{width: 40%;
        display: flex;
        justify-content: space-around;

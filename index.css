@@ -255,6 +255,12 @@
   body nav .logo {
     margin-left: 8%;
   }
+  body nav .logo img {
+    width: 100%;
+    height: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
   body nav .links {
     width: 40%;
     display: -webkit-box;
