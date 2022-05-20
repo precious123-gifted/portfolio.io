@@ -342,6 +342,9 @@
     transition: color .3s ease-in-out, box-shadow .6s ease-in-out, -webkit-box-shadow .6s ease-in-out;
     color: black;
   }
+  body nav .menu {
+    margin-right: 3%;
+  }
   body .conDiv {
     position: fixed;
     width: 100%;
@@ -411,7 +414,7 @@
     margin-left: 8%;
   }
   body header .headertext {
-    font-size: 60px;
+    font-size: 350%;
     width: 90%;
   }
   body header .headerwriteup {

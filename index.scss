@@ -193,6 +193,7 @@ transition: color .3s ease-in-out, box-shadow .6s ease-in-out;
 }
  }      
 }
+.menu{margin-right: 3%;}
 }
 .conDiv{
 position: fixed;
@@ -224,7 +225,7 @@ flex-direction: column;
 justify-content: space-between;
 width: 100%;
 margin-left: 8%;
-.headertext{font-size: 60px;width: 90%;}
+.headertext{font-size: 350%;width: 90%;}
 .headerwriteup{font-size: 25px;margin-bottom: 50px;width: 90%;}
 .workbtn{width: 220px;
     font-size: 20px;
