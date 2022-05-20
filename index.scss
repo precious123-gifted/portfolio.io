@@ -1,7 +1,7 @@
 *{overflow: hidden;}
 
 @media only screen and (min-width: 1050px) and (orientation: landscape) {
-body{background-image: url(bgp.jpg);
+body{background-image: url(images/bgp.jpg);
     overflow: hidden;
     margin: 0;
     user-select: none;
@@ -58,11 +58,15 @@ position: absolute;
 width: 100%;
 display: flex;
 justify-content: flex-end;
+pointer-events: none;
 .contactMenu{
  margin-right: -320px;   
 width: 320px;
 height: 290px;
 background-color: #37EFAD;
+pointer-events: auto;
+.exit{display: flex;
+justify-content: flex-end;}
 .cont{display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -116,7 +120,7 @@ transition: all 0.7s ease-in;}
    html{width: 100vw;
 height: 100vh;
 overflow: hidden;}
-    body{background-image: url(bgp.jpg);
+    body{background-image: url(images/bgp.jpg);
         background-repeat: no-repeat;
         background-size: cover;
     overflow: hidden;
@@ -182,6 +186,8 @@ width: 320px;
 height: 290px;
 background-color: #37EFAD;
 pointer-events: auto;
+.exit{display: flex;
+justify-content: flex-end;}
 .cont{display: flex;
     flex-direction: column;
     justify-content: space-around;

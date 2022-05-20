@@ -7,9 +7,9 @@ const menuIcon = document.querySelector('.menu')
 
 const slideMenuIn = ()=>{
     // @ts-ignore
-    menu.style.animation = 'slidein 1.01s ease'
+    menu.style.animation = 'slidein 1.0s ease'
     // @ts-ignore
-    setTimeout(()=>{ menu.style.marginRight = '0px'},1000)
+    setTimeout(()=>{ menu.style.marginRight = '0px'},0900)
 }
 
 
@@ -17,9 +17,9 @@ const slideMenuIn = ()=>{
 
 const slideMenuOut = ()=>{
     // @ts-ignore
-    menu.style.animation = 'slideout 1.01s ease'
+    menu.style.animation = 'slideout 1.0s ease'
     // @ts-ignore
-    setTimeout(()=>{ menu.style.marginRight = '-320px'},1000)
+    setTimeout(()=>{ menu.style.marginRight = '-320px'},0900)
 }
 
 // Check if the media query is true
@@ -45,7 +45,7 @@ if (portraitMediaQuery.matches) {
 
 
 
-
+// code for swipe up swipe down swipe left swipe right
 //assigning touchevent
 //gettting the current position of touch
     menu.addEventListener('touchstart', handleTouchStart, false);
@@ -173,5 +173,5 @@ function handleTouchEnd(e) {
 
         return defaultValue;
     }
-
+// code for swipe up swipe down swipe left swipe right
 
