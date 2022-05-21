@@ -70,18 +70,35 @@ display: flex;
 justify-content: flex-end;
 pointer-events: none;
 .contactMenu{
- margin-right: -320px;   
+ margin-right: -320px;    
 width: 320px;
 height: 290px;
 background-color: #37EFAD;
 pointer-events: auto;
 .exit{display: flex;
 justify-content: flex-end;}
-.cont{display: flex;
+.cont{
+height: 250px;
+display: flex;
+
+
+.cont1{
+    display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-height: 250px;}
+    height: 100%;
+    min-width: 100%;
+}
+.cont2{height: 100%;
+min-width: 0;
+visibility: hidden;
+display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+font-size: 30px;}
+}
 .socials{display: flex;align-items: center;justify-content: space-evenly;width: 50%;}
 }
 }
