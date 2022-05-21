@@ -2,14 +2,20 @@ const landscapeMediaQuery = window.matchMedia('(orientation:landscape)')
 const portraitMediaQuery = window.matchMedia('(orientation:portrait)')
 const Contact = document.querySelector('#contact')
 const menu = document.querySelector('.contactMenu')
+const contDiv = document.querySelector('.cont')
 const exitIcon = document.querySelector('.ex')
 const menuIcon = document.querySelector('.menu')
+const Cts = document.querySelector('#cts')
+const cont1 = document.querySelector('.cont1')
+const cont2 = document.querySelector('.cont2')
+gsap.registerPlugin(ScrollToPlugin);
+
 
 const slideMenuIn = ()=>{
     // @ts-ignore
     menu.style.animation = 'slidein 1.0s ease'
     // @ts-ignore
-    setTimeout(()=>{ menu.style.marginRight = '0px'},0900)
+    setTimeout(()=>{ menu.style.marginRight = '0px'},.0900)
 }
 
 
@@ -19,10 +25,16 @@ const slideMenuOut = ()=>{
     // @ts-ignore
     menu.style.animation = 'slideout 1.0s ease'
     // @ts-ignore
-    setTimeout(()=>{ menu.style.marginRight = '-320px'},0900)
+    setTimeout(()=>{ menu.style.marginRight = '-320px'},.0900)
 }
 
-// Check if the media query is true
+
+Cts.addEventListener('click',(e)=>{
+   
+    gsap.to(contDiv, {duration: 0.8,scrollTo:cont1})
+})
+
+// Check if the media query is true for desktop view
 if (landscapeMediaQuery.matches) {
   Contact.addEventListener('click',()=>{
       slideMenuIn()
@@ -32,7 +44,7 @@ if (landscapeMediaQuery.matches) {
        slideMenuOut()
    })
 }
-
+//mobile view
 if (portraitMediaQuery.matches) {
   menuIcon.addEventListener('click',()=>{
       slideMenuIn()
@@ -41,7 +53,70 @@ if (portraitMediaQuery.matches) {
    exitIcon.addEventListener('click',()=>{
        slideMenuOut()
    })
+
+
+   cont1.addEventListener('touchstart', handleTouchStart, false);
+    cont1.addEventListener('touchmove', handleTouchMove, false);
+    cont1.addEventListener('touchend', handleTouchEndForCont1, false);
+
 }
+
+function handleTouchEndForCont1(e) {
+
+        // if the user released on a different target, cancel!
+        if (startEl !== e.target) return;
+
+        var swipeThreshold = parseInt(getNearestAttribute(startEl, 'data-swipe-threshold', '20'), 10); // default 20px
+        var swipeTimeout = parseInt(getNearestAttribute(startEl, 'data-swipe-timeout', '500'), 10);    // default 500ms
+        var timeDiff = Date.now() - timeDown;
+        var eventType = '';
+        var changedTouches = e.changedTouches || e.touches || [];
+
+        if (Math.abs(xDiff) > Math.abs(yDiff)) { // most significant
+            if (Math.abs(xDiff) > swipeThreshold && timeDiff < swipeTimeout) {
+                if (xDiff > 0) {
+                    eventType = 'swiped-left';
+                }
+                else {
+                    eventType = 'swiped-right';
+                     gsap.to(contDiv, {duration: 0.8,scrollTo:cont2})
+                }
+            }
+        }
+        else if (Math.abs(yDiff) > swipeThreshold && timeDiff < swipeTimeout) {
+            if (yDiff > 0) {
+                eventType = 'swiped-up';
+            }
+            else {
+                eventType = 'swiped-down';
+            }
+        }
+
+        if (eventType !== '') {
+
+            var eventData = {
+                dir: eventType.replace(/swiped-/, ''),
+                touchType: (changedTouches[0] || {}).touchType || 'direct',
+                xStart: parseInt(xDown, 10),
+                xEnd: parseInt((changedTouches[0] || {}).clientX || -1, 10),
+                yStart: parseInt(yDown, 10),
+                yEnd: parseInt((changedTouches[0] || {}).clientY || -1, 10)
+            };
+
+            // fire `swiped` event event on the element that started the swipe
+            startEl.dispatchEvent(new CustomEvent('swiped', { bubbles: true, cancelable: true, detail: eventData }));
+
+            // fire `swiped-dir` event on the element that started the swipe
+            startEl.dispatchEvent(new CustomEvent(eventType, { bubbles: true, cancelable: true, detail: eventData }));
+        }
+
+        // reset values
+        xDown = null;
+        yDown = null;
+        timeDown = null;
+    }
+
+
 
 
 
