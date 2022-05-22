@@ -8,7 +8,30 @@ const menuIcon = document.querySelector('.menu')
 const Cts = document.querySelector('#cts')
 const cont1 = document.querySelector('.cont1')
 const cont2 = document.querySelector('.cont2')
+const workBTN = document.querySelector('#work')
+const resumeBTN = document.querySelector('#resume')
+const workbtn = document.querySelector('#wk')
+const resumebtn = document.querySelector('#re')
+const header = document.querySelector('.header')
+const workNresumePage = document.querySelector('.workAndResume')
+const workPage = document.querySelector('.workPage')
+const resumePage = document.querySelector('.resumePage')
+const Pages = document.querySelector('.pages')
+const logo = document.querySelector('.logo')
+
+
+
 gsap.registerPlugin(ScrollToPlugin);
+
+
+logo.addEventListener('click',()=>{
+gsap.to(Pages, {duration: 1, scrollTo : header})
+})
+document.addEventListener('click',(e)=>{
+    if(e.target === workbtn || e.target === workBTN){
+    gsap.to(Pages, {duration: 1, scrollTo : workNresumePage})    
+    }
+})
 
 
 const slideMenuIn = ()=>{

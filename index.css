@@ -14,7 +14,10 @@
     width: 100%;
     height: 100vh;
   }
-  body nav {
+  body .top {
+    margin-bottom: 7%;
+  }
+  body .top nav {
     background-color: rgba(0, 0, 0, 0.541);
     margin: 0;
     display: -webkit-box;
@@ -23,14 +26,13 @@
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    margin-bottom: 7%;
     width: 100%;
   }
-  body nav .logo {
+  body .top nav .logo {
     margin-left: 8%;
     height: 100%;
   }
-  body nav .logo .logoText {
+  body .top nav .logo .logoText {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -43,15 +45,15 @@
             align-items: center;
     color: white;
   }
-  body nav .logo .logoText span {
+  body .top nav .logo .logoText span {
     font-size: 250%;
     color: #37EFAD;
   }
-  body nav .menu {
+  body .top nav .menu {
     visibility: hidden;
     position: absolute;
   }
-  body nav .links {
+  body .top nav .links {
     width: 40%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -64,10 +66,10 @@
     font-size: 20px;
     color: white;
   }
-  body nav .links #work {
+  body .top nav .links #work {
     color: #37EFAD;
   }
-  body nav .links .li::before, body nav .links #work::before {
+  body .top nav .links .li::before, body .top nav .links #work::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -85,13 +87,13 @@
     transition: transform .3s ease-in-out;
     transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
   }
-  body nav .links .li:hover::before, body nav .links #work:hover::before {
+  body .top nav .links .li:hover::before, body .top nav .links #work:hover::before {
     -webkit-transform-origin: left;
             transform-origin: left;
     -webkit-transform: scaleX(1);
             transform: scaleX(1);
   }
-  body nav .links .li:hover, body nav .links #work:hover {
+  body .top nav .links .li:hover, body .top nav .links #work:hover {
     -webkit-box-shadow: inset 100px 0 0 0 #37EFAD;
             box-shadow: inset 100px 0 0 0 #37EFAD;
     -webkit-transition: color .3s ease-in-out, -webkit-box-shadow .6s ease-in-out;
@@ -100,7 +102,7 @@
     transition: color .3s ease-in-out, box-shadow .6s ease-in-out, -webkit-box-shadow .6s ease-in-out;
     color: black;
   }
-  body .conDiv {
+  body .top .conDiv {
     position: absolute;
     width: 100%;
     display: -webkit-box;
@@ -111,14 +113,14 @@
             justify-content: flex-end;
     pointer-events: none;
   }
-  body .conDiv .contactMenu {
+  body .top .conDiv .contactMenu {
     margin-right: -320px;
     width: 320px;
     height: 290px;
     background-color: #37EFAD;
     pointer-events: auto;
   }
-  body .conDiv .contactMenu .exit {
+  body .top .conDiv .contactMenu .exit {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -126,13 +128,13 @@
         -ms-flex-pack: end;
             justify-content: flex-end;
   }
-  body .conDiv .contactMenu .cont {
+  body .top .conDiv .contactMenu .cont {
     height: 250px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  body .conDiv .contactMenu .cont .cont1 {
+  body .top .conDiv .contactMenu .cont .cont1 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -148,7 +150,7 @@
     height: 100%;
     min-width: 100%;
   }
-  body .conDiv .contactMenu .cont .cont2 {
+  body .top .conDiv .contactMenu .cont .cont2 {
     height: 100%;
     min-width: 0;
     visibility: hidden;
@@ -166,7 +168,7 @@
             align-items: center;
     font-size: 30px;
   }
-  body .conDiv .contactMenu .socials {
+  body .top .conDiv .contactMenu .socials {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -178,8 +180,27 @@
             justify-content: space-evenly;
     width: 50%;
   }
-  body header {
+  body .pages {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+  }
+  body .pages header {
     color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    min-width: 0%;
+  }
+  body .pages header .hd {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -193,14 +214,14 @@
     width: 60%;
     margin-left: 8%;
   }
-  body header .headertext {
+  body .pages header .hd .headertext {
     font-size: 60px;
   }
-  body header .headerwriteup {
+  body .pages header .hd .headerwriteup {
     font-size: 25px;
     margin-bottom: 50px;
   }
-  body header .workbtn {
+  body .pages header .hd .workbtn {
     width: 220px;
     font-size: 20px;
     height: 70px;
@@ -219,9 +240,64 @@
     -webkit-transition: all 0.7s ease-in;
     transition: all 0.7s ease-in;
   }
-  body header :hover {
+  body .pages header .hd :hover {
     background-color: black;
     color: #37EFAD;
+  }
+  body .pages .workAndResume {
+    min-width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  body .pages .workAndResume .workPage {
+    min-width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body .pages .workAndResume .workPage .h1div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 40px;
+    color: #37EFAD;
+    border-bottom: 1px solid #37EFAD;
+  }
+  body .pages .workAndResume .workPage .worksDiv {
+    margin-top: 4%;
+    width: 80%;
+    height: 30%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (10%)[6];
+        grid-template-columns: repeat(6, 10%);
+    -ms-grid-rows: (40%)[2];
+        grid-template-rows: repeat(2, 40%);
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 30px;
+    overflow: auto;
+  }
+  body .pages .workAndResume .workPage .worksDiv .pw {
+    background-color: #37EFAD;
+  }
+  body .pages .workAndResume .resumePage {
+    min-width: 100%;
   }
 }
 
@@ -261,6 +337,10 @@
   }
 }
 
+::-webkit-scrollbar {
+  visibility: hidden;
+}
+
 @media only screen and (max-width: 1050px) and (orientation: portrait) {
   html {
     width: 100vw;
@@ -280,7 +360,10 @@
     width: 100vw;
     height: 100vh;
   }
-  body nav {
+  body .top {
+    margin-bottom: 7%;
+  }
+  body .top nav {
     background-color: rgba(0, 0, 0, 0.541);
     margin: 0;
     display: -webkit-box;
@@ -292,14 +375,13 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin-bottom: 7%;
     width: 100%;
   }
-  body nav .logo {
+  body .top nav .logo {
     margin-left: 8%;
     height: 100%;
   }
-  body nav .logo .logoText {
+  body .top nav .logo .logoText {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -312,11 +394,11 @@
             align-items: center;
     color: white;
   }
-  body nav .logo .logoText span {
+  body .top nav .logo .logoText span {
     font-size: 250%;
     color: #37EFAD;
   }
-  body nav .links {
+  body .top nav .links {
     width: 40%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -331,10 +413,10 @@
     position: absolute;
     color: white;
   }
-  body nav .links #work {
+  body .top nav .links #work {
     color: #37EFAD;
   }
-  body nav .links .li::before, body nav .links #work::before {
+  body .top nav .links .li::before, body .top nav .links #work::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -352,13 +434,13 @@
     transition: transform .3s ease-in-out;
     transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
   }
-  body nav .links .li:hover::before, body nav .links #work:hover::before {
+  body .top nav .links .li:hover::before, body .top nav .links #work:hover::before {
     -webkit-transform-origin: left;
             transform-origin: left;
     -webkit-transform: scaleX(1);
             transform: scaleX(1);
   }
-  body nav .links .li:hover, body nav .links #work:hover {
+  body .top nav .links .li:hover, body .top nav .links #work:hover {
     -webkit-box-shadow: inset 100px 0 0 0 #37EFAD;
             box-shadow: inset 100px 0 0 0 #37EFAD;
     -webkit-transition: color .3s ease-in-out, -webkit-box-shadow .6s ease-in-out;
@@ -367,10 +449,10 @@
     transition: color .3s ease-in-out, box-shadow .6s ease-in-out, -webkit-box-shadow .6s ease-in-out;
     color: black;
   }
-  body nav .menu {
+  body .top nav .menu {
     margin-right: 3%;
   }
-  body .conDiv {
+  body .top .conDiv {
     position: fixed;
     width: 100%;
     display: -webkit-box;
@@ -381,14 +463,14 @@
             justify-content: flex-end;
     pointer-events: none;
   }
-  body .conDiv .contactMenu {
+  body .top .conDiv .contactMenu {
     margin-right: -320px;
     width: 320px;
     height: 290px;
     background-color: #37EFAD;
     pointer-events: auto;
   }
-  body .conDiv .contactMenu .exit {
+  body .top .conDiv .contactMenu .exit {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -396,13 +478,13 @@
         -ms-flex-pack: end;
             justify-content: flex-end;
   }
-  body .conDiv .contactMenu .cont {
+  body .top .conDiv .contactMenu .cont {
     height: 250px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  body .conDiv .contactMenu .cont .cont1 {
+  body .top .conDiv .contactMenu .cont .cont1 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -418,7 +500,7 @@
     height: 100%;
     min-width: 100%;
   }
-  body .conDiv .contactMenu .cont .cont2 {
+  body .top .conDiv .contactMenu .cont .cont2 {
     height: 100%;
     min-width: 100%;
     display: -webkit-box;
@@ -435,7 +517,7 @@
             align-items: center;
     font-size: 30px;
   }
-  body .conDiv .contactMenu .socials {
+  body .top .conDiv .contactMenu .socials {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -447,7 +529,13 @@
             justify-content: space-evenly;
     width: 50%;
   }
-  body header {
+  body .pages {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+  }
+  body .pages header {
     color: white;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -459,19 +547,33 @@
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    width: 100%;
+    min-width: 100%;
+  }
+  body .pages header .hd {
+    color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    min-width: 100%;
     margin-left: 8%;
   }
-  body header .headertext {
+  body .pages header .hd .headertext {
     font-size: 350%;
     width: 90%;
   }
-  body header .headerwriteup {
+  body .pages header .hd .headerwriteup {
     font-size: 25px;
     margin-bottom: 50px;
     width: 90%;
   }
-  body header .workbtn {
+  body .pages header .hd .workbtn {
     width: 220px;
     font-size: 20px;
     height: 70px;
@@ -490,9 +592,64 @@
     -webkit-transition: all 0.7s ease-in;
     transition: all 0.7s ease-in;
   }
-  body header :hover {
+  body .pages header .hd :hover {
     background-color: black;
     color: #37EFAD;
+  }
+  body .pages .workAndResume {
+    min-width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  body .pages .workAndResume .workPage {
+    min-width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body .pages .workAndResume .workPage .h1div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 40px;
+    color: #37EFAD;
+    border-bottom: 1px solid #37EFAD;
+  }
+  body .pages .workAndResume .workPage .worksDiv {
+    margin-top: 4%;
+    width: 80%;
+    height: 70%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (200px)[6];
+        grid-template-columns: repeat(6, 200px);
+    -ms-grid-rows: (100px)[2];
+        grid-template-rows: repeat(2, 100px);
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 30px;
+    overflow: auto;
+  }
+  body .pages .workAndResume .workPage .worksDiv .pw {
+    background-color: #37EFAD;
+  }
+  body .pages .workAndResume .resumePage {
+    min-width: 100%;
   }
 }
 /*# sourceMappingURL=index.css.map */

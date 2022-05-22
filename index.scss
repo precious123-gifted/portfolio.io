@@ -7,11 +7,13 @@ body{background-image: url(images/bgp.jpg);
     user-select: none;
     width: 100%;
     height: 100vh;
-nav{background-color: rgba(0, 0, 0, 0.541);
+.top{
+margin-bottom: 7%;
+
+    nav{background-color: rgba(0, 0, 0, 0.541);
     margin: 0;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 7%;
     width: 100%;
 .logo{margin-left: 8%;
     height: 100%;
@@ -102,13 +104,26 @@ font-size: 30px;}
 .socials{display: flex;align-items: center;justify-content: space-evenly;width: 50%;}
 }
 }
+}
 
-header{color: white;
+.pages{
+   display: flex;
+width: 100%; 
+
+ header{
+ color: white;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
-width: 60%;
+min-width: 0%;
+
+.hd{
+  display: flex;
+flex-direction: column;
+justify-content: space-between;
+width: 60%;  
 margin-left: 8%;
+
 .headertext{font-size: 60px;}
 .headerwriteup{font-size: 25px;margin-bottom: 50px;}
 .workbtn{width: 220px;
@@ -126,6 +141,50 @@ transition: all 0.7s ease-in;}
     color: #37EFAD;
 }
 }
+
+}   
+
+.workAndResume{
+min-width: 100%;
+display: flex;
+
+.workPage{min-width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+.h1div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    color: #37EFAD;
+    border-bottom: 1px solid #37EFAD;
+}
+.worksDiv  {
+    margin-top: 4%;
+width: 80%;
+height: 30%;
+display: grid;
+grid-template-columns: repeat(6,10%);
+ 
+grid-template-rows: repeat(2,40%);
+justify-content: center;
+gap: 30px;
+overflow: auto;
+
+    .pw{
+       
+        background-color: #37EFAD;
+    }
+}
+
+}
+.resumePage{min-width: 100%;}
+}
+
+}
+
+
 }
 
 
@@ -139,7 +198,9 @@ transition: all 0.7s ease-in;}
     from{margin-right: 0px;}
     to {margin-right: -320px;}
 }
-
+::-webkit-scrollbar {
+  visibility: hidden;
+}
 
 
 //mobile view
@@ -155,12 +216,16 @@ overflow: hidden;}
     user-select: none;
     width: 100vw;
     height: 100vh;
-nav{background-color: rgba(0, 0, 0, 0.541);
+    
+.top{margin-bottom: 7%;
+
+
+    nav{background-color: rgba(0, 0, 0, 0.541);
     margin: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 7%;
+    
     width: 100%;
 .logo{margin-left: 8%;
     height: 100%;
@@ -251,13 +316,27 @@ font-size: 30px;}
 }
 }
 
+}
+.pages{
+display: flex;
+width: 100%;
 
-header{color: white;
+
+   header{
+     color: white;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
-width: 100%;
+min-width: 100%;
+    
+.hd{
+        color: white;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+min-width: 100%;
 margin-left: 8%;
+
 .headertext{font-size: 350%;width: 90%;}
 .headerwriteup{font-size: 25px;margin-bottom: 50px;width: 90%;}
 .workbtn{width: 220px;
@@ -275,5 +354,48 @@ transition: all 0.7s ease-in;}
     color: #37EFAD;
 }
 }
+} 
+
+.workAndResume{
+min-width: 100%;
+display: flex;
+
+.workPage{min-width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+.h1div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    color: #37EFAD;
+    border-bottom: 1px solid #37EFAD;
+}
+.worksDiv  {
+    margin-top: 4%;
+width: 80%;
+height: 70%;
+display: grid;
+grid-template-columns: repeat(6,200px);
+ 
+grid-template-rows: repeat(2,100px);
+justify-content: center;
+gap: 30px;
+overflow: auto;
+
+    .pw{
+       
+        background-color: #37EFAD;
+    }
+}
+
+}
+.resumePage{min-width: 100%;}
+}
+
+
+}
+
 }
   }
