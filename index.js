@@ -18,6 +18,7 @@ const workPage = document.querySelector('.workPage')
 const resumePage = document.querySelector('.resumePage')
 const Pages = document.querySelector('.pages')
 const logo = document.querySelector('.logo')
+const checkMyWorkBtn = document.querySelector('.workbtn')
 
 
 
@@ -28,7 +29,7 @@ logo.addEventListener('click',()=>{
 gsap.to(Pages, {duration: 1, scrollTo : header})
 })
 document.addEventListener('click',(e)=>{
-    if(e.target === workbtn || e.target === workBTN){
+    if(e.target === workbtn || e.target === workBTN ||e.target === checkMyWorkBtn ){
     gsap.to(Pages, {duration: 1, scrollTo : workNresumePage})    
     }
 })
