@@ -20,20 +20,60 @@ const Pages = document.querySelector('.pages')
 const logo = document.querySelector('.logo')
 const checkMyWorkBtn = document.querySelector('.workbtn')
 
-
+let home = true
 
 gsap.registerPlugin(ScrollToPlugin);
 
+const setHomeTrue =()=>{home= true
+    console.log('home is '+home)}
+const setHomeFalse =()=>{ home=false
+        console.log('home is'+home)}    
+
+const slideToHome = ()=>{ if (menu.style.marginRight) slideMenuOut()
+gsap.to(Pages, {duration: 1, scrollTo : header})}
 
 logo.addEventListener('click',()=>{
-gsap.to(Pages, {duration: 1, scrollTo : header})
-})
-document.addEventListener('click',(e)=>{
+    setHomeTrue(slideToHome())
+},)
+
+const slideToWorkPageFromHome=()=>{  if (menu.style.marginRight) slideMenuOut()
+        gsap.to(workNresumePage, {duration: 0, scrollTo : workPage}) 
+     gsap.to(Pages, {duration: 1, scrollTo : workNresumePage}) 
+   } 
+
+const slideToWorkPage=()=>{  if (menu.style.marginRight) slideMenuOut()
+        gsap.to(workNresumePage, {duration: 1, scrollTo : workPage}) 
+   }    
+
+const slideToResumePageFromHome=()=>{  if (menu.style.marginRight) slideMenuOut()
+     gsap.to(workNresumePage, {duration: 0, scrollTo : resumePage})    
+    gsap.to(Pages, {duration: 1, scrollTo : workNresumePage}) 
+   } 
+
+   const slideToResumePage=()=>{  if (menu.style.marginRight) slideMenuOut()
+        gsap.to(workNresumePage, {duration: 1, scrollTo : resumePage}) 
+   } 
+
+
+   //event listener for clicking on work button
+   document.addEventListener('click',(e)=>{
     if(e.target === workbtn || e.target === workBTN ||e.target === checkMyWorkBtn ){
-    gsap.to(Pages, {duration: 1, scrollTo : workNresumePage})    
+       
+   if(home==true)  setHomeFalse(slideToWorkPageFromHome())  
+   else if(home==false )  slideToWorkPage()
+     }
+},) //event listener for clicking on work button
+
+
+//event listener for clicking on resume button
+document.addEventListener('click',(e)=>{
+    if(e.target === resumebtn || e.target === resumeBTN ){
+       
+      if(home==true)  setHomeFalse(slideToResumePageFromHome())  
+      else if(home==false )  slideToResumePage()     
     }
 })
-
+//event listener for clicking on resume button
 
 const slideMenuIn = ()=>{
     // @ts-ignore

@@ -650,6 +650,13 @@
   }
   body .pages .workAndResume .resumePage {
     min-width: 100%;
+    color: #37EFAD;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 /*# sourceMappingURL=index.css.map */
