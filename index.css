@@ -198,7 +198,7 @@
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    min-width: 0%;
+    min-width: 100%;
   }
   body .pages header .hd {
     display: -webkit-box;

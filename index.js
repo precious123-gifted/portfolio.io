@@ -30,7 +30,7 @@ const setHomeFalse =()=>{ home=false
         console.log('home is'+home)}    
 
 const slideToHome = ()=>{ if (menu.style.marginRight) slideMenuOut()
-gsap.to(Pages, {duration: 1, scrollTo : header})}
+gsap.to(Pages, {duration: 0.8, scrollTo : header})}
 
 logo.addEventListener('click',()=>{
     setHomeTrue(slideToHome())
@@ -38,20 +38,20 @@ logo.addEventListener('click',()=>{
 
 const slideToWorkPageFromHome=()=>{  if (menu.style.marginRight) slideMenuOut()
         gsap.to(workNresumePage, {duration: 0, scrollTo : workPage}) 
-     gsap.to(Pages, {duration: 1, scrollTo : workNresumePage}) 
+     gsap.to(Pages, {duration: 0.8, scrollTo : workNresumePage}) 
    } 
 
 const slideToWorkPage=()=>{  if (menu.style.marginRight) slideMenuOut()
-        gsap.to(workNresumePage, {duration: 1, scrollTo : workPage}) 
+        gsap.to(workNresumePage, {duration: 0.8, scrollTo : workPage}) 
    }    
 
 const slideToResumePageFromHome=()=>{  if (menu.style.marginRight) slideMenuOut()
      gsap.to(workNresumePage, {duration: 0, scrollTo : resumePage})    
-    gsap.to(Pages, {duration: 1, scrollTo : workNresumePage}) 
+    gsap.to(Pages, {duration: 0.8, scrollTo : workNresumePage}) 
    } 
 
    const slideToResumePage=()=>{  if (menu.style.marginRight) slideMenuOut()
-        gsap.to(workNresumePage, {duration: 1, scrollTo : resumePage}) 
+        gsap.to(workNresumePage, {duration: 0.8, scrollTo : resumePage}) 
    } 
 
 
@@ -77,9 +77,9 @@ document.addEventListener('click',(e)=>{
 
 const slideMenuIn = ()=>{
     // @ts-ignore
-    menu.style.animation = 'slidein 1.0s ease'
+    menu.style.animation = 'slidein 0.8s ease'
     // @ts-ignore
-    setTimeout(()=>{ menu.style.marginRight = '0px'},.0900)
+    setTimeout(()=>{ menu.style.marginRight = '0px'},.0700)
 }
 
 
@@ -87,9 +87,9 @@ const slideMenuIn = ()=>{
 
 const slideMenuOut = ()=>{
     // @ts-ignore
-    menu.style.animation = 'slideout 1.0s ease'
+    menu.style.animation = 'slideout 0.8s ease'
     // @ts-ignore
-    setTimeout(()=>{ menu.style.marginRight = '-320px'},.0900)
+    setTimeout(()=>{ menu.style.marginRight = '-320px'},.0700)
 }
 
 const scrollToContacts =()=>{
