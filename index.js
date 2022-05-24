@@ -92,14 +92,16 @@ const slideMenuOut = ()=>{
     setTimeout(()=>{ menu.style.marginRight = '-320px'},.0900)
 }
 
+const scrollToContacts =()=>{
+    Cts.addEventListener('click',(e)=>{
+   gsap.to(contDiv, {duration: 0.8,scrollTo:cont1})
+})}
+scrollToContacts()
 
-Cts.addEventListener('click',(e)=>{
-   
-    gsap.to(contDiv, {duration: 0.8,scrollTo:cont1})
-})
 
 // Check if the media query is true for desktop view
-if (landscapeMediaQuery.matches) {
+const menuEventForDesktopView=()=>{
+    if (landscapeMediaQuery.matches) {
   Contact.addEventListener('click',()=>{
       slideMenuIn()
    })
@@ -107,9 +109,12 @@ if (landscapeMediaQuery.matches) {
    exitIcon.addEventListener('click',()=>{
        slideMenuOut()
    })
-}
+}}
+menuEventForDesktopView()// Check if the media query is true for desktop view
+
 //mobile view
-if (portraitMediaQuery.matches) {
+const menuEventForMobileView=()=>{
+    if (portraitMediaQuery.matches) {
   menuIcon.addEventListener('click',()=>{
       slideMenuIn()
    })
@@ -118,12 +123,94 @@ if (portraitMediaQuery.matches) {
        slideMenuOut()
    })
 
-
-   cont1.addEventListener('touchstart', handleTouchStart, false);
-    cont1.addEventListener('touchmove', handleTouchMove, false);
     cont1.addEventListener('touchend', handleTouchEndForCont1, false);
 
 }
+}
+menuEventForMobileView()
+//mobile view
+
+Pages.addEventListener('touchstart', handleTouchStart, false);
+Pages.addEventListener('touchmove', handleTouchMove, false);
+header.addEventListener('touchend',handleTouchEndForHeader,false);
+workPage.addEventListener('touchend',handleTouchEndForWorkPage,false);
+resumePage.addEventListener('touchend',handleTouchEndForResumePage,false);
+
+function handleTouchEndForHeader(e) {
+
+        // if the user released on a different target, cancel!
+        if (startEl !== e.target) return;
+
+        var swipeThreshold = parseInt(getNearestAttribute(startEl, 'data-swipe-threshold', '20'), 10); // default 20px
+        var swipeTimeout = parseInt(getNearestAttribute(startEl, 'data-swipe-timeout', '500'), 10);    // default 500ms
+        var timeDiff = Date.now() - timeDown;
+        var eventType = '';
+        var changedTouches = e.changedTouches || e.touches || [];
+
+        if (Math.abs(xDiff) > Math.abs(yDiff)) { // most significant
+            if (Math.abs(xDiff) > swipeThreshold && timeDiff < swipeTimeout) {
+                if (xDiff > 0) {
+                   eventType = 'swiped-left';
+                     slideToWorkPageFromHome()
+                }
+               
+            }
+        }// reset values
+        xDown = null;
+        yDown = null;
+        timeDown = null;
+    }
+function handleTouchEndForWorkPage(e) {
+
+        // if the user released on a different target, cancel!
+        if (startEl !== e.target) return;
+
+        var swipeThreshold = parseInt(getNearestAttribute(startEl, 'data-swipe-threshold', '20'), 10); // default 20px
+        var swipeTimeout = parseInt(getNearestAttribute(startEl, 'data-swipe-timeout', '500'), 10);    // default 500ms
+        var timeDiff = Date.now() - timeDown;
+        var eventType = '';
+        var changedTouches = e.changedTouches || e.touches || [];
+
+        if (Math.abs(xDiff) > Math.abs(yDiff)) { // most significant
+            if (Math.abs(xDiff) > swipeThreshold && timeDiff < swipeTimeout) {
+                if (xDiff > 0) {
+                   eventType = 'swiped-left';
+                     slideToResumePage()
+                }
+              else if (xDiff < 0) {
+                   eventType = 'swiped-left';
+                     slideToHome()
+                }
+            }
+        }// reset values
+        xDown = null;
+        yDown = null;
+        timeDown = null;
+    }
+function handleTouchEndForResumePage(e) {
+
+        // if the user released on a different target, cancel!
+        if (startEl !== e.target) return;
+
+        var swipeThreshold = parseInt(getNearestAttribute(startEl, 'data-swipe-threshold', '20'), 10); // default 20px
+        var swipeTimeout = parseInt(getNearestAttribute(startEl, 'data-swipe-timeout', '500'), 10);    // default 500ms
+        var timeDiff = Date.now() - timeDown;
+        var eventType = '';
+        var changedTouches = e.changedTouches || e.touches || [];
+
+        if (Math.abs(xDiff) > Math.abs(yDiff)) { // most significant
+            if (Math.abs(xDiff) > swipeThreshold && timeDiff < swipeTimeout) {
+                if (xDiff < 0) {
+                   eventType = 'swiped-left';
+                     slideToWorkPage()
+                }
+               
+            }
+        }// reset values
+        xDown = null;
+        yDown = null;
+        timeDown = null;
+    }
 
 function handleTouchEndForCont1(e) {
 
@@ -138,43 +225,13 @@ function handleTouchEndForCont1(e) {
 
         if (Math.abs(xDiff) > Math.abs(yDiff)) { // most significant
             if (Math.abs(xDiff) > swipeThreshold && timeDiff < swipeTimeout) {
-                if (xDiff > 0) {
-                    eventType = 'swiped-left';
+                if (xDiff < 0) {
+                   eventType = 'swiped-right';
+                     gsap.to(contDiv, {duration: 0.8,scrollTo:cont2}) 
                 }
-                else {
-                    eventType = 'swiped-right';
-                     gsap.to(contDiv, {duration: 0.8,scrollTo:cont2})
-                }
+               
             }
-        }
-        else if (Math.abs(yDiff) > swipeThreshold && timeDiff < swipeTimeout) {
-            if (yDiff > 0) {
-                eventType = 'swiped-up';
-            }
-            else {
-                eventType = 'swiped-down';
-            }
-        }
-
-        if (eventType !== '') {
-
-            var eventData = {
-                dir: eventType.replace(/swiped-/, ''),
-                touchType: (changedTouches[0] || {}).touchType || 'direct',
-                xStart: parseInt(xDown, 10),
-                xEnd: parseInt((changedTouches[0] || {}).clientX || -1, 10),
-                yStart: parseInt(yDown, 10),
-                yEnd: parseInt((changedTouches[0] || {}).clientY || -1, 10)
-            };
-
-            // fire `swiped` event event on the element that started the swipe
-            startEl.dispatchEvent(new CustomEvent('swiped', { bubbles: true, cancelable: true, detail: eventData }));
-
-            // fire `swiped-dir` event on the element that started the swipe
-            startEl.dispatchEvent(new CustomEvent(eventType, { bubbles: true, cancelable: true, detail: eventData }));
-        }
-
-        // reset values
+        }// reset values
         xDown = null;
         yDown = null;
         timeDown = null;
@@ -187,8 +244,8 @@ function handleTouchEndForCont1(e) {
 // code for swipe up swipe down swipe left swipe right
 //assigning touchevent
 //gettting the current position of touch
-    menu.addEventListener('touchstart', handleTouchStart, false);
-    menu.addEventListener('touchmove', handleTouchMove, false);
+menu.addEventListener('touchstart', handleTouchStart, false);
+menu.addEventListener('touchmove', handleTouchMove, false);
     menu.addEventListener('touchend', handleTouchEnd, false);
 
     var xDown = null;
