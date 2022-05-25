@@ -279,22 +279,68 @@
   }
   body .pages .workAndResume .workPage .worksDiv {
     margin-top: 4%;
-    width: 80%;
-    height: 30%;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (10%)[6];
-        grid-template-columns: repeat(6, 10%);
-    -ms-grid-rows: (40%)[2];
-        grid-template-rows: repeat(2, 40%);
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body .pages .workAndResume .workPage .worksDiv .pw {
+    width: 12%;
+    height: 80%;
+    background-color: #37EFAD;
+  }
+  body .pages .workAndResume .workPage .worksDiv .pw a {
+    list-style-type: none;
+    text-decoration: none;
+  }
+  body .pages .workAndResume .workPage .worksDiv .pw .v {
+    width: 100%;
+    height: 100%;
+    background-color: #37efab88;
+    color: white;
+    opacity: 0;
+    font-size: 2em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    gap: 30px;
-    overflow: auto;
+    -webkit-transition: 0.5s ease all;
+    transition: 0.5s ease all;
   }
-  body .pages .workAndResume .workPage .worksDiv .pw {
-    background-color: #37EFAD;
+  body .pages .workAndResume .workPage .worksDiv .pw .v:hover {
+    opacity: 100%;
+  }
+  body .pages .workAndResume .workPage .worksDiv #p1 {
+    background-image: url(images/w.png);
+    background-size: cover;
+  }
+  body .pages .workAndResume .workPage .worksDiv #p2 {
+    background-image: url(images/w1.png);
+    background-size: cover;
+  }
+  body .pages .workAndResume .workPage .worksDiv #p3 {
+    background-image: url(images/w2.png);
+    background-size: cover;
+  }
+  body .pages .workAndResume .workPage .worksDiv #p4 {
+    background-image: url(images/w3.png);
+    background-size: cover;
+  }
+  body .pages .workAndResume .workPage .worksDiv #p5 {
+    background-image: url(images/w4.png);
+    background-size: cover;
   }
   body .pages .workAndResume .resumePage {
     min-width: 100%;
@@ -632,21 +678,70 @@
   body .pages .workAndResume .workPage .worksDiv {
     margin-top: 4%;
     width: 80%;
-    height: 70%;
+    height: 100%;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (200px)[6];
-        grid-template-columns: repeat(6, 200px);
-    -ms-grid-rows: (100px)[2];
-        grid-template-rows: repeat(2, 100px);
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body .pages .workAndResume .workPage .worksDiv .pw {
+    width: 90%;
+    height: 80%;
+    background-color: #37EFAD;
+  }
+  body .pages .workAndResume .workPage .worksDiv .pw a {
+    list-style-type: none;
+    text-decoration: none;
+  }
+  body .pages .workAndResume .workPage .worksDiv .pw .v {
+    width: 100%;
+    height: 100%;
+    background-color: #37efab88;
+    color: white;
+    opacity: 0;
+    font-size: 2em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    gap: 30px;
-    overflow: auto;
+    -webkit-transition: 0.5s ease all;
+    transition: 0.5s ease all;
   }
-  body .pages .workAndResume .workPage .worksDiv .pw {
-    background-color: #37EFAD;
+  body .pages .workAndResume .workPage .worksDiv .pw .v:hover {
+    opacity: 100%;
+  }
+  body .pages .workAndResume .workPage .worksDiv #p1 {
+    background-image: url(images/w.png);
+    background-size: cover;
+  }
+  body .pages .workAndResume .workPage .worksDiv #p2 {
+    background-image: url(images/w1.png);
+    background-size: cover;
+  }
+  body .pages .workAndResume .workPage .worksDiv #p3 {
+    background-image: url(images/w2.png);
+    background-size: cover;
+  }
+  body .pages .workAndResume .workPage .worksDiv #p4 {
+    background-image: url(images/w3.png);
+    background-size: cover;
+  }
+  body .pages .workAndResume .workPage .worksDiv #p5 {
+    background-image: url(images/w4.png);
+    background-size: cover;
   }
   body .pages .workAndResume .resumePage {
     min-width: 100%;
