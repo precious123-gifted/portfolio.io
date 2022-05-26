@@ -151,7 +151,7 @@ function handleTouchEndForHeader(e) {
             if (Math.abs(xDiff) > swipeThreshold && timeDiff < swipeTimeout) {
                 if (xDiff > 0) {
                    eventType = 'swiped-left';
-                     slideToWorkPageFromHome()
+                     setHomeFalse(slideToWorkPageFromHome())  
                 }
                
             }
@@ -179,7 +179,7 @@ function handleTouchEndForWorkPage(e) {
                 }
               else if (xDiff < 0) {
                    eventType = 'swiped-left';
-                     slideToHome()
+                     setHomeTrue(slideToHome())
                 }
             }
         }// reset values
