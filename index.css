@@ -196,12 +196,10 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
     min-width: 100%;
   }
   body .pages header .hd {
+    margin-top: 4%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -213,6 +211,7 @@
         -ms-flex-pack: justify;
             justify-content: space-between;
     width: 60%;
+    height: 60%;
     margin-left: 8%;
   }
   body .pages header .hd .headertext {
