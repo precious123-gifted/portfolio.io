@@ -895,6 +895,9 @@
         -ms-flex-align: center;
             align-items: center;
   }
+  body .pages .workAndResume .resumePage .resumediv .rescont1 .res1d h3 {
+    font-size: 120%;
+  }
   body .pages .workAndResume .resumePage .resumediv .rescont1 .res1d span {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -910,6 +913,7 @@
         -ms-flex-align: center;
             align-items: center;
     text-align: center;
+    font-size: 100%;
   }
   body .pages .workAndResume .resumePage .resumediv .rescont2 {
     width: 100%;
@@ -938,6 +942,9 @@
         -ms-flex-align: center;
             align-items: center;
   }
+  body .pages .workAndResume .resumePage .resumediv .rescont2 .res2d h3 {
+    font-size: 120%;
+  }
   body .pages .workAndResume .resumePage .resumediv .rescont2 .res2d span {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -953,6 +960,7 @@
         -ms-flex-align: center;
             align-items: center;
     text-align: center;
+    font-size: 100%;
   }
 }
 /*# sourceMappingURL=index.css.map */
