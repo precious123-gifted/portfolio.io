@@ -21,6 +21,7 @@ const logo = document.querySelector('.logo')
 const checkMyWorkBtn = document.querySelector('.workbtn')
 
 let home = true
+let menuState = 'out'
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -80,6 +81,7 @@ const slideMenuIn = ()=>{
     menu.style.animation = 'slidein 0.8s ease'
     // @ts-ignore
     setTimeout(()=>{ menu.style.marginRight = '0px'},.0700)
+    menuState='in'
 }
 
 
@@ -90,6 +92,7 @@ const slideMenuOut = ()=>{
     menu.style.animation = 'slideout 0.8s ease'
     // @ts-ignore
     setTimeout(()=>{ menu.style.marginRight = '-320px'},.0700)
+    menuState='out'
 }
 
 const scrollToContacts =()=>{
@@ -135,6 +138,20 @@ Pages.addEventListener('touchmove', handleTouchMove, false);
 header.addEventListener('touchend',handleTouchEndForHeader,false);
 workPage.addEventListener('touchend',handleTouchEndForWorkPage,false);
 resumePage.addEventListener('touchend',handleTouchEndForResumePage,false);
+
+
+
+header.addEventListener('click',(e)=>{
+    if (menuState == 'in'){slideMenuOut()}
+})
+
+workPage.addEventListener('click',(e)=>{
+    if (menuState == 'in'){slideMenuOut()}
+})
+resumePage.addEventListener('click',(e)=>{
+    if (menuState == 'in'){slideMenuOut()}
+})
+
 
 function handleTouchEndForHeader(e) {
 
